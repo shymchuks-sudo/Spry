@@ -1,7 +1,7 @@
-AWS_REGION ?= eu-central-1
-ECR_REGISTRY ?= your-aws-account-id.dkr.ecr.$(AWS_REGION).amazonaws.com
-S3_BUCKET ?= spry-frontend-bucket
-CLOUDFRONT_DIST_ID ?= YOUR_DISTRIBUTION_ID
+AWS_REGION ?= eu-north-1
+ECR_REGISTRY ?= 594559484590.dkr.ecr.$(AWS_REGION).amazonaws.com
+S3_BUCKET ?= spry-frontend-shymchuks-sudo
+CLOUDFRONT_DIST_ID ?= E28WXS7KZKWV0G
 
 .PHONY: build-local up-local deploy-frontend deploy-backend
 

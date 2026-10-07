@@ -16,8 +16,8 @@ permissions:
 
 env:
   AWS_REGION: eu-north-1
-  S3_BUCKET: spry-frontend-664874246122
-  CLOUDFRONT_DISTRIBUTION_ID: E1XBOI4V3UL61W
+  S3_BUCKET: spry-frontend-shymchuks-sudo
+  CLOUDFRONT_DISTRIBUTION_ID: E28WXS7KZKWV0G
 
 jobs:
   deploy:
