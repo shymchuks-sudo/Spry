@@ -8,10 +8,6 @@ on:
       - "backend/**"
       - ".github/workflows/deploy-backend.yml"
 
-permissions:
-  id-token: write
-  contents: read
-
 env:
   AWS_REGION: eu-north-1
   ECR_REPOSITORY: spry-backend
@@ -31,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: eu-north-1
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -40,7 +36,6 @@ jobs:
       - name: Build and push backend image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: spry-backend
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build \
