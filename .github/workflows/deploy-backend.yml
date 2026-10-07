@@ -23,11 +23,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Show OIDC claims
+        run: |
+          TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | python3 -c "import sys,json; print(json.load(sys.stdin)['value'])")
+          echo "$TOKEN" | cut -d. -f2 | python3 -c "
+          import sys, base64, json
+          s = sys.stdin.read().strip()
+          s += '=' * (-len(s) % 4)
+          d = json.loads(base64.urlsafe_b64decode(s))
+          for k in ['sub', 'aud', 'iss', 'repository', 'repository_owner']:
+              print(k, '=', d.get(k))
+          "
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ env.AWS_REGION }}
+          disable-retry: true
 
       - name: Login to Amazon ECR
         id: login-ecr
