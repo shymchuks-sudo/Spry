@@ -13,7 +13,7 @@ Parameters:
     NoEcho: true
   CognitoDomainPrefix:
     Type: String
-    Default: 'spry-auth-app'
+    Default: 'spry-shymchuk-auth'
 
 Resources:
   UserPool:
