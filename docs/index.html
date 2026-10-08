@@ -107,7 +107,8 @@
       const code = urlParams.get("code");
 
       if (code) {
-        localStorage.setItem("userEmail", "0101mimika2001@gmail.com");
+        // Записуємо акаунт UCU для входу через Google
+        localStorage.setItem("userEmail", "shymchuk.pn@ucu.edu.ua");
         window.history.replaceState({}, document.title, window.location.pathname);
       }
 
