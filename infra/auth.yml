@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS Cognito User Pool with Google Identity Provider for Lab 4
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: spry
+  GoogleClientId:
+    Type: String
+    Default: '71169484793-tgjn6abs819ogba7afoj6mbe18odc8c5.apps.googleusercontent.com'
+  GoogleClientSecret:
+    Type: String
+    NoEcho: true
+  CognitoDomainPrefix:
+    Type: String
+    Default: 'spry-auth-app'
+
+Resources:
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub '${ProjectName}-user-pool'
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: false
+      UserPoolTier: ESSENTIALS
+      UserPoolTags:
+        PROJECT_NAME: !Ref ProjectName
+
+  UserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Ref CognitoDomainPrefix
+      UserPoolId: !Ref UserPool
+
+  UserPoolIdentityProviderGoogle:
+    Type: AWS::Cognito::UserPoolIdentityProvider
+    Properties:
+      UserPoolId: !Ref UserPool
+      ProviderName: Google
+      ProviderType: Google
+      ProviderDetails:
+        client_id: !Ref GoogleClientId
+        client_secret: !Ref GoogleClientSecret
+        authorize_scopes: 'openid email profile'
+      AttributeMapping:
+        email: email
+        email_verified: email_verified
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    DependsOn: UserPoolIdentityProviderGoogle
+    Properties:
+      ClientName: !Sub '${ProjectName}-app-client'
+      UserPoolId: !Ref UserPool
+      GenerateSecret: false
+      AllowedOAuthFlows:
+        - code
+      AllowedOAuthScopes:
+        - openid
+        - email
+        - profile
+      SupportedIdentityProviders:
+        - COGNITO
+        - Google
+      AllowedOAuthFlowsUserPoolClient: true
+      CallbackURLs:
+        - 'https://d3b5dueyhkda58.cloudfront.net/'
+        - 'http://localhost:5173/'
+      LogoutURLs:
+        - 'https://d3b5dueyhkda58.cloudfront.net/'
+        - 'http://localhost:5173/'
+
+Outputs:
+  UserPoolId:
+    Value: !Ref UserPool
+  UserPoolClientId:
+    Value: !Ref UserPoolClient
+  CognitoAuthDomain:
+    Value: !Sub 'https://${CognitoDomainPrefix}.auth.us-east-1.amazoncognito.com'
