@@ -1,9 +1,87 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head><meta charset="UTF-8"><title>Spry App</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spry App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-info {
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .login-btn, .logout-btn {
+      background-color: #ffffff;
+      color: #007bff;
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .logout-btn {
+      background-color: #dc3545;
+      color: white;
+      margin-left: 10px;
+    }
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
 <body>
-  <h1>Spry App</h1>
-  <p>Spry - вебзастосунок. Для входу використовується акаунт Google.</p>
-  <p><a href="privacy.html">Політика конфіденційності</a> | <a href="terms.html">Умови використання</a></p>
-</body>
-</html>
+
+  <header>
+    <h2>Spry App</h2>
+    <div id="auth-container">
+      <!-- Динамічно заповнюється скриптом -->
+    </div>
+  </header>
+
+  <main>
+    <h1>Вітаємо у вебзастосунку Spry!</h1>
+    <p>Для входу використовується акаунт Google або Email + Пароль через AWS Cognito.</p>
+  </main>
+
+  <footer>
+    <p>
+      <a href="privacy.html">Політика конфіденційності</a> | 
+      <a href="terms.html">Умови використання</a>
+    </p>
+  </footer>
+
+  <script>
+    const COGNITO_DOMAIN = "https://spry-shymchuk-auth.auth.us-east-1.amazoncognito.com";
+    const CLIENT_ID = "1tkojgihgq5cgt7987jg0faqpo";
+    const REDIRECT_URI = "https://shymchuks-sudo.github.io/Spry/";
+
+    const LOGIN_URL = `${COGNITO_DOMAIN}/login?client_id=${CLIENT_ID}&response_type=code
