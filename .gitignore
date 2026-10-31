@@ -9,3 +9,15 @@ __pycache__/
 
 __pycache__/
 *.pyc
+
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+crash.log
+
+infra/.build/
+
+frontend/.env.local
+.env.local
+infra/.build/
