@@ -1,55 +1,68 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCurrentUser } from "aws-amplify/auth";
-import { Plus } from "lucide-react";
-import { createMeeting, listMeetings } from "@/api/meetings";
-import { MeetingCard } from "@/components/MeetingCard";
-import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import type { Meeting, MeetingCreate } from "@/types/meeting";
+  fetchAuthSession,
+  getCurrentUser,
+  signInWithRedirect,
+  signOut,
+} from "aws-amplify/auth";
+import { Hub } from "aws-amplify/utils";
+import { Plus } from "lucide-react";
+import { listMeetings } from "@/api/meetings";
+import { MeetingCard } from "@/components/MeetingCard";
+import { NewMeetingDialog } from "@/components/NewMeetingDialog";
+import { Button } from "@/components/ui/button";
+import { AgendaPaste } from "@/components/AgendaPaste";
+import type { Meeting } from "@/types/meeting";
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [authLoading, setAuthLoading] = useState<boolean>(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
 
   const [meetings, setMeetings] = useState<Meeting[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-
-  const [title, setTitle] = useState("");
-  const [startAt, setStartAt] = useState("");
-  const [endAt, setEndAt] = useState("");
-  const [attendeesText, setAttendeesText] = useState("");
 
   useEffect(() => {
+    const returningFromLogin = new URLSearchParams(window.location.search).has("code");
+
     async function checkUser() {
       try {
         await getCurrentUser();
         setIsAuthenticated(true);
-      } catch (err) {
-        setIsAuthenticated(false);
-        window.location.href =
-          "https://spry-shymchuk-auth.auth.us-east-1.amazoncognito.com/login?client_id=1tkojgihgq5cgt7987jg0faqpo&response_type=code&scope=email+openid+profile&redirect_uri=https://d3b5dueyhkda58.cloudfront.net/";
-      } finally {
         setAuthLoading(false);
+        const session = await fetchAuthSession();
+        const claim = session.tokens?.idToken?.payload.email;
+        setEmail(typeof claim === "string" ? claim : null);
+      } catch {
+        // Amplify is still exchanging the code; the Hub event below will call us again
+        if (returningFromLogin) return;
+        setAuthLoading(false);
+        await signInWithRedirect();
       }
     }
+
+    const stop = Hub.listen("auth", ({ payload }) => {
+      if (payload.event === "signInWithRedirect") {
+        window.history.replaceState({}, "", window.location.pathname);
+        void checkUser();
+      }
+      if (payload.event === "signInWithRedirect_failure") {
+        setAuthLoading(false);
+        setAuthError("Не вдалося увійти. Спробуйте ще раз.");
+      }
+    });
+
     void checkUser();
+    return stop;
   }, []);
 
   const load = useCallback(async () => {
     try {
       setError(null);
-      const data = await listMeetings();
-      setMeetings(data);
+      setMeetings(await listMeetings());
     } catch (e) {
       setError(e instanceof Error ? e.message : "Не вдалося завантажити зустрічі");
     } finally {
@@ -63,44 +76,19 @@ export default function App() {
     }
   }, [isAuthenticated, load]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError(null);
-
-    const attendees = attendeesText
-      .split("\n")
-      .map((s) => s.trim())
-      .filter(Boolean);
-
-    const payload: MeetingCreate = {
-      title,
-      start_at: new Date(startAt).toISOString(),
-      end_at: new Date(endAt).toISOString(),
-      attendees,
-    };
-
-    try {
-      await createMeeting(payload);
-      setDialogOpen(false);
-      setTitle("");
-      setStartAt("");
-      setEndAt("");
-      setAttendeesText("");
-      await load();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Не вдалося створити зустріч");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   if (authLoading) {
     return <div className="p-8 text-center text-muted-foreground">Завантаження...</div>;
   }
 
   if (!isAuthenticated) {
-    return <div className="p-8 text-center text-muted-foreground">Перенаправлення на вхід...</div>;
+    return (
+      <div className="p-8 text-center text-muted-foreground">
+        <p>{authError ?? "Перенаправлення на вхід..."}</p>
+        <Button className="mt-4" onClick={() => void signInWithRedirect()}>
+          Увійти
+        </Button>
+      </div>
+    );
   }
 
   return (
@@ -110,88 +98,39 @@ export default function App() {
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">Meetings</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Заплановані відеодзвінки та події
+              {email ? `Ви увійшли як ${email}` : "Заплановані відеодзвінки та події"}
             </p>
           </div>
 
-          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <Button size="sm" className="gap-1.5">
-                <Plus className="h-4 w-4" />
-                New meeting
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Створити зустріч</DialogTitle>
-                <DialogDescription>
-                  Заповніть деталі нової події для розкладу.
-                </DialogDescription>
-              </DialogHeader>
-
-              <form onSubmit={handleSubmit} className="space-y-4 pt-2">
-                <div>
-                  <label className="text-sm font-medium">Назва</label>
-                  <input
-                    type="text"
-                    required
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="mt-1 w-full rounded-md border p-2 text-sm"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-sm font-medium">Початок</label>
-                    <input
-                      type="datetime-local"
-                      required
-                      value={startAt}
-                      onChange={(e) => setStartAt(e.target.value)}
-                      className="mt-1 w-full rounded-md border p-2 text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium">Завершення</label>
-                    <input
-                      type="datetime-local"
-                      required
-                      value={endAt}
-                      onChange={(e) => setEndAt(e.target.value)}
-                      className="mt-1 w-full rounded-md border p-2 text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium">Учасники (по одному на рядок)</label>
-                  <textarea
-                    rows={3}
-                    value={attendeesText}
-                    onChange={(e) => setAttendeesText(e.target.value)}
-                    className="mt-1 w-full rounded-md border p-2 text-sm"
-                  />
-                </div>
-
-                <Button type="submit" disabled={submitting} className="w-full">
-                  {submitting ? "Створення..." : "Зберегти"}
-                </Button>
-              </form>
-            </DialogContent>
-          </Dialog>
+          <div className="flex items-center gap-2">
+            <Button size="sm" className="gap-1.5" onClick={() => setDialogOpen(true)}>
+              <Plus className="h-4 w-4" />
+              New meeting
+            </Button>
+            <Button size="sm" onClick={() => void signOut()}>
+              Sign out
+            </Button>
+          </div>
         </header>
 
+        <AgendaPaste meetings={meetings} onChanged={() => void load()} />
+
+        <NewMeetingDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          onCreated={() => void load()}
+        />
+
         {error && (
-          <div className="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-600">
-            {error}
-          </div>
+          <div className="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-600">{error}</div>
         )}
 
         {loading ? (
           <p className="text-sm text-muted-foreground">Завантаження розкладу...</p>
         ) : meetings.length === 0 ? (
-          <p className="text-sm text-muted-foreground">У вас поки немає запланованих зустрічей.</p>
+          <p className="text-sm text-muted-foreground">
+            У вас поки немає запланованих зустрічей.
+          </p>
         ) : (
           <div className="space-y-3">
             {meetings.map((m) => (

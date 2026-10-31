@@ -16,7 +16,7 @@ export default defineConfig({
     strictPort: true,
     watch: { usePolling: true },
     proxy: {
-      "/api": "http://backend:8000",
+      "/api": process.env.API_PROXY ?? "http://backend:8000",
     },
   },
 });

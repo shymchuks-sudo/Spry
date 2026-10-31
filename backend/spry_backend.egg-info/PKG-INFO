@@ -7,3 +7,4 @@ Requires-Dist: sqlalchemy==2.1.1
 Requires-Dist: alembic==1.20.0
 Requires-Dist: uvicorn==0.54.0
 Requires-Dist: psycopg[binary]==3.3.6
+Requires-Dist: anthropic[bedrock]

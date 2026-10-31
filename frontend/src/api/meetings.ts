@@ -36,3 +36,20 @@ export async function createMeeting(input: MeetingCreate): Promise<Meeting> {
   if (!response.ok) throw new Error(await errorMessage(response));
   return (await response.json()) as Meeting;
 }
+
+export interface AgendaSavePayload {
+  items: { topic: string; owner: string | null; minutes: number | null }[];
+  action_items: { task: string; owner: string | null; due: string | null }[];
+  ai_suggestion: unknown;
+  ai_model: string | null;
+  prompt_version: string | null;
+}
+
+export async function saveAgenda(meetingId: number, payload: AgendaSavePayload): Promise<void> {
+  const response = await fetch(`/api/meetings/${meetingId}/agenda`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw new Error(await errorMessage(response));
+}
