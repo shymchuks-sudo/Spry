@@ -1,0 +1,3 @@
+{"time_utc": "2026-11-07T12:15:13.085927+00:00", "offset": 0, "limit": 20000, "fail_rate": 0.0, "sent": 20000, "seconds": 46.3, "records_per_second": 432.0}
+{"time_utc": "2026-11-07T12:27:37.882515+00:00", "offset": 20000, "limit": 3000, "fail_rate": 0.3, "sent": 3000, "seconds": 7.9, "records_per_second": 381.5}
+{"time_utc": "2026-11-07T12:43:16.427118+00:00", "offset": 20000, "limit": 3000, "fail_rate": 0.3, "sent": 3000, "seconds": 8.3, "records_per_second": 362.5}

@@ -48,6 +48,8 @@ class StreamingConsumer:
         # Streaming state
         self.max_event_time = 0
         self.watermark = 0
+        self.part_max = {}      # partition -> max event time seen in it
+        self.assigned = set()   # partitions currently assigned to this consumer
         # open_windows: window_start_ts -> { paymentMethod -> {"total": int, "failures": int} }
         self.open_windows = defaultdict(lambda: defaultdict(lambda: {"total": 0, "failures": 0}))
         self.closed_window_starts = set()
@@ -74,7 +76,7 @@ class StreamingConsumer:
             "enable.auto.commit": False,  # Manual commit ONLY after checkpoint persistence
         }
         self.consumer = Consumer(conf)
-        self.consumer.subscribe([self.topic])
+        self.consumer.subscribe([self.topic], on_assign=self.on_assign, on_revoke=self.on_revoke)
         self.running = True
 
     def load_checkpoint(self):
@@ -84,6 +86,7 @@ class StreamingConsumer:
                     data = json.load(f)
                 self.max_event_time = data.get("max_event_time", 0)
                 self.watermark = data.get("watermark", 0)
+                self.part_max = {int(k): v for k, v in data.get("part_max", {}).items()}
                 self.events_consumed = data.get("events_consumed", 0)
                 self.duplicates_dropped = data.get("duplicates_dropped", 0)
                 self.late_rejected = data.get("late_rejected", 0)
@@ -115,6 +118,7 @@ class StreamingConsumer:
         state = {
             "max_event_time": self.max_event_time,
             "watermark": self.watermark,
+            "part_max": {str(k): v for k, v in self.part_max.items()},
             "events_consumed": self.events_consumed,
             "duplicates_dropped": self.duplicates_dropped,
             "late_rejected": self.late_rejected,
@@ -153,7 +157,22 @@ class StreamingConsumer:
         for k in to_delete:
             del self.seen_events[k]
 
-    def process_event(self, event: dict):
+    def on_assign(self, consumer, partitions):
+        self.assigned = {p.partition for p in partitions}
+        print(f"[{self.client_id}] assigned partitions: {sorted(self.assigned)}")
+
+    def on_revoke(self, consumer, partitions):
+        self.assigned -= {p.partition for p in partitions}
+
+    def update_watermark(self):
+        """Watermark = slowest assigned partition's max event time minus lateness."""
+        if not self.assigned:
+            return
+        slowest = min(self.part_max.get(p, 0) for p in self.assigned)
+        if slowest > 0:
+            self.watermark = max(self.watermark, slowest - self.lateness_sec)
+
+    def process_event(self, event: dict, partition: int):
         self.events_consumed += 1
 
         inv_id = event["invoiceId"]
@@ -169,10 +188,12 @@ class StreamingConsumer:
             return
         self.seen_events[dedup_key] = event_time
 
-        # 2. Advance event time & watermark
+        # 2. Advance per-partition event time, then the global (minimum) watermark
+        if event_time > self.part_max.get(partition, 0):
+            self.part_max[partition] = event_time
         if event_time > self.max_event_time:
             self.max_event_time = event_time
-            self.watermark = self.max_event_time - self.lateness_sec
+        self.update_watermark()
 
         # 3. Window routing (tumbling 1-minute window)
         win_start = (event_time // 60) * 60
@@ -303,7 +324,7 @@ class StreamingConsumer:
                 last_msg_time = time.time()
                 try:
                     payload = json.loads(msg.value().decode("utf-8"))
-                    self.process_event(payload)
+                    self.process_event(payload, msg.partition())
                 except Exception as ex:
                     print(f"Error parsing message: {ex}", file=sys.stderr)
 

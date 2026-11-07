@@ -1,0 +1,9 @@
+{"query": "10_streamed_table.sql", "query_id": "f4baad00-051e-4d2b-a0e9-35cfd4cccad6", "scanned_bytes": 0, "engine_ms": 386}
+{"query": "11_streamed_by_status.sql", "query_id": "205ba627-9b4a-47be-8a6c-f812e1ed57a2", "scanned_bytes": 7341768, "engine_ms": 615}
+{"query": "12_streamed_count.sql", "query_id": "0c109719-a9e6-4c91-b875-583e0a65b5f9", "scanned_bytes": 7341768, "engine_ms": 592}
+{"query": "13_streamed_failure_by_method.sql", "query_id": "697326ce-76e4-48fa-8149-b9001a3c2f4b", "scanned_bytes": 8321971, "engine_ms": 447}
+{"query": "12_streamed_count.sql", "query_id": "ba7facd9-eb9c-4e82-8513-9a8e7d4208d9", "scanned_bytes": 8321971, "engine_ms": 547}
+{"query": "12_streamed_count.sql", "query_id": "a8db89c9-4237-423b-bac4-faf71738c2e0", "scanned_bytes": 9580917, "engine_ms": 649}
+{"query": "12_streamed_count.sql", "query_id": "d8772b4c-7baa-4995-8726-f216afb3f9d0", "scanned_bytes": 10839863, "engine_ms": 563}
+{"query": "13_streamed_failure_by_method.sql", "query_id": "362d3001-4c08-4c96-83bf-caf09201686a", "scanned_bytes": 10839863, "engine_ms": 607}
+{"query": "12_streamed_count.sql", "query_id": "ba109db6-e118-4562-95ef-da1fb876b088", "scanned_bytes": 10839863, "engine_ms": 928}

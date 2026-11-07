@@ -1,0 +1,5 @@
+paymentMethod,final_events,failures,failure_pct
+card,4778,637,13.3
+qr,181,24,13.3
+apple_pay,2211,256,11.6
+google_pay,1501,162,10.8

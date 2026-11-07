@@ -8,3 +8,6 @@ __pycache__/
 lab8/data/
 lab8/.venv/
 *.parquet
+
+.terraform/
+lab8/part4/tmp/

@@ -22,7 +22,7 @@
 - **Impact of Missing Deduplication**:
   - Computing turnover on raw `payment_events` where `status = 'success'` yields **949,199** events and a turnover of **788,712,575.40** (inflated by **9,379** duplicate success events and **7,615,229.53** in phantom turnover, an error of ~0.97%).
   - With proper deduplication in the `payments` view, there are exactly **939,820** successful payments totaling **781,097,345.87**.
-  - Placing `DISTINCT` before `ROW_NUMBER()` eliminates duplicate rows prior to windowing, preventing unnecessary sort memory overhead in the distributed execution engine.
+ DISTINCT is applied before row_number() because a re-delivered final event exists twice with the same modifiedDate, so the two copies tie and which one receives rank 1 is arbitrary. In this dataset the duplicates are exact copies (0 differing receivedAt values were measured), so the result happens to be the same either way, but if the copies ever differ (for example in receivedAt) the result can change between runs, and rank() would return both rows. Removing exact duplicates first makes the ranking deterministic. Without deduplication, counts and sums are inflated: the raw table gives 949,199 success events and a turnover of 788,712,575.40, while the deduplicated data gives 939,820 successful payments and 781,097,345.87, so the raw figures are about 1% too high.
 
 ---
 

@@ -1,73 +1,147 @@
 Starting StreamingConsumer [c1-late0] for topic 'payments', group 'payments-late0-cg' (allowed lateness=0s)...
-[WINDOW CLOSED] 2026-10-01T00:02:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[c1-late0] assigned partitions: [0, 1, 2]
+[WINDOW CLOSED] 2026-10-01T00:00:00Z | Method: apple_pay    | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:00:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:01:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:01:00Z | Method: card         | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 100.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:02:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:02:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:03:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:03:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:03:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:05:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:06:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: card         | Terminal:    3 | Failures:   1 | Share: 33.33% [ALERT > 10%]
+  *** ALERT: Failure share for card is 33.33% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: google_pay   | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
+  *** ALERT: Failure share for google_pay is 50.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:05:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:05:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:06:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:06:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:07:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:07:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:07:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:08:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:08:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:09:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:08:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:09:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:10:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:10:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:11:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:10:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:11:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:12:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:15:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: google_pay   | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:14:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:14:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:15:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:15:00Z | Method: card         | Terminal:    6 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:20:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:17:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:18:00Z | Method: card         | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 50.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:20:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:20:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:21:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:21:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:21:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:22:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:23:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:23:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:24:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:24:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:25:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:26:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:25:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:26:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:27:00Z | Method: google_pay   | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
   *** ALERT: Failure share for google_pay is 100.00% (exceeds 10.0% threshold) ***
 [WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:29:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:30:00Z | Method: card         | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
+[WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:29:00Z | Method: apple_pay    | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:29:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:30:00Z | Method: card         | Terminal:    5 | Failures:   1 | Share: 20.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 20.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:30:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:31:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:33:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:34:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:34:00Z | Method: card         | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
   *** ALERT: Failure share for card is 50.00% (exceeds 10.0% threshold) ***
-[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:35:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:36:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:37:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:38:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:41:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:43:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:45:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:46:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: card         | Terminal:    3 | Failures:   1 | Share: 33.33% [ALERT > 10%]
+[WINDOW CLOSED] 2026-10-01T00:35:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:35:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:36:00Z | Method: card         | Terminal:    3 | Failures:   1 | Share: 33.33% [ALERT > 10%]
   *** ALERT: Failure share for card is 33.33% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:37:00Z | Method: apple_pay    | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for apple_pay is 100.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:37:00Z | Method: card         | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 50.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:38:00Z | Method: card         | Terminal:    4 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:39:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:39:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:39:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:40:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:41:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:42:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:43:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:44:00Z | Method: apple_pay    | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:44:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:45:00Z | Method: card         | Terminal:    5 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:45:00Z | Method: google_pay   | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for google_pay is 100.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:46:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:46:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:47:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:47:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:47:00Z | Method: google_pay   | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for google_pay is 100.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: card         | Terminal:    4 | Failures:   1 | Share: 25.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 25.00% (exceeds 10.0% threshold) ***
 [WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: card         | Terminal:    4 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:51:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:52:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:52:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:52:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: card         | Terminal:    5 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:54:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:54:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:54:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:54:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:55:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:55:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:56:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:56:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:56:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:57:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
 [WINDOW CLOSED] 2026-10-01T00:57:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:59:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
-[WINDOW CLOSED] 2026-10-01T00:59:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:58:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:58:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:58:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
 [c1-late0] No messages received for 4.0s. Exiting loop.
 ------------------------------------------------------------
-Flushing 1 remaining open windows at end of run...
+Flushing 2 remaining open windows at end of run...
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:59:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:59:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
 [WINDOW FLUSHED (END OF RUN)] 2026-10-01T01:00:00Z | Method: apple_pay    | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
   *** ALERT: Failure share for apple_pay is 100.00% (exceeds 10.0% threshold) ***
 ------------------------------------------------------------
+Summary written to lab8\part3\results\exp4_lateness0.json
 ============================================================
 Consumer [c1-late0] Final Execution Summary:
   Events Consumed:    636
   Duplicates Dropped: 7
-  Late Rejected:      421
-  Windows Closed:     41
-  Alerts Fired:       4
-  Dedup Set Size:     194
+  Late Rejected:      4
+  Windows Closed:     59
+  Alerts Fired:       14
+  Dedup Set Size:     198
 ============================================================
-Summary written to lab8\part3\results\exp4_lateness0.json
