@@ -1,0 +1,4 @@
+"pipeline_stage","total_rows","total_final_amount_minor","total_turnover_major"
+"without_dedup_raw_success","949199","78871257540","788712575.40"
+"without_dedup_just_row_number_without_distinct","939820","78109734587","781097345.87"
+"with_dedup","939820","78109734587","781097345.87"

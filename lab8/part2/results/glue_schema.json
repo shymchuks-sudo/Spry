@@ -1,0 +1,90 @@
+{
+  "payments": {
+    "Columns": [
+      {
+        "Name": "invoiceid",
+        "Type": "string"
+      },
+      {
+        "Name": "amount",
+        "Type": "int"
+      },
+      {
+        "Name": "ccy",
+        "Type": "int"
+      },
+      {
+        "Name": "reference",
+        "Type": "string"
+      },
+      {
+        "Name": "createddate",
+        "Type": "string"
+      },
+      {
+        "Name": "merchantid",
+        "Type": "string"
+      },
+      {
+        "Name": "merchantname",
+        "Type": "string"
+      },
+      {
+        "Name": "mcc",
+        "Type": "int"
+      },
+      {
+        "Name": "customerid",
+        "Type": "string"
+      },
+      {
+        "Name": "paymentmethod",
+        "Type": "string"
+      },
+      {
+        "Name": "device",
+        "Type": "string"
+      },
+      {
+        "Name": "status",
+        "Type": "string"
+      },
+      {
+        "Name": "modifieddate",
+        "Type": "string"
+      },
+      {
+        "Name": "finalamount",
+        "Type": "int"
+      },
+      {
+        "Name": "receivedat",
+        "Type": "string"
+      },
+      {
+        "Name": "failurereason",
+        "Type": "string"
+      }
+    ],
+    "PartitionKeys": [
+      {
+        "Name": "dt",
+        "Type": "string"
+      }
+    ],
+    "Parameters": {
+      "sizeKey": "1260672849",
+      "objectCount": "31",
+      "UPDATED_BY_CRAWLER": "lab8-payments-crawler",
+      "CRAWL_RUN_ID": "7bd66984-b78a-4b01-bafa-baa90ae782f7",
+      "recordCount": "1202922",
+      "CrawlerSchemaSerializerVersion": "1.0",
+      "averageRecordSize": "1047",
+      "partition_filtering.enabled": "true",
+      "compressionType": "none",
+      "CrawlerSchemaDeserializerVersion": "1.0",
+      "classification": "json",
+      "typeOfData": "file"
+    }
+  }
+}
