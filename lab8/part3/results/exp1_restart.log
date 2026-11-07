@@ -1,0 +1,94 @@
+Starting StreamingConsumer [c1-phase1] for topic 'payments', group 'payments-cg' (allowed lateness=120s)...
+[WINDOW CLOSED] 2026-10-01T00:02:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:02:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:03:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:04:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:05:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:06:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:08:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:09:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:10:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:11:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:13:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:15:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:16:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:20:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:20:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:21:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:24:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:25:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:26:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:27:00Z | Method: google_pay   | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for google_pay is 100.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:28:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:29:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:30:00Z | Method: card         | Terminal:    2 | Failures:   1 | Share: 50.00% [ALERT > 10%]
+  *** ALERT: Failure share for card is 50.00% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:32:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:35:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:36:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:37:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:38:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:41:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:43:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:45:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:46:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: card         | Terminal:    3 | Failures:   1 | Share: 33.33% [ALERT > 10%]
+  *** ALERT: Failure share for card is 33.33% (exceeds 10.0% threshold) ***
+[WINDOW CLOSED] 2026-10-01T00:48:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:50:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:51:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:52:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:53:00Z | Method: card         | Terminal:    3 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:54:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:55:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:55:00Z | Method: qr           | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:56:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+Summary written to lab8\part3\results\exp1_phase1.json
+[c1-phase1] *** CRASH TRIGGERED at 300 events! Stopping abruptly without flushing open windows ***
+============================================================
+Consumer [c1-phase1] Final Execution Summary:
+  Events Consumed:    300
+  Duplicates Dropped: 5
+  Late Rejected:      98
+  Windows Closed:     38
+  Alerts Fired:       3
+  Dedup Set Size:     295
+============================================================
+
+
+--- CONSUMER RESTARTED ---
+
+[c1-phase2] Restored state from checkpoint: consumed=300, dedup_set_size=295, watermark=2026-10-01T00:57:56Z
+Starting StreamingConsumer [c1-phase2] for topic 'payments', group 'payments-cg' (allowed lateness=120s)...
+[WINDOW CLOSED] 2026-10-01T00:57:00Z | Method: card         | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW CLOSED] 2026-10-01T00:57:00Z | Method: google_pay   | Terminal:    2 | Failures:   0 | Share:  0.00%
+[c1-phase2] No messages received for 4.0s. Exiting loop.
+------------------------------------------------------------
+Flushing 3 remaining open windows at end of run...
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:58:00Z | Method: apple_pay    | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:58:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:58:00Z | Method: google_pay   | Terminal:    1 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:59:00Z | Method: apple_pay    | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T00:59:00Z | Method: card         | Terminal:    2 | Failures:   0 | Share:  0.00%
+[WINDOW FLUSHED (END OF RUN)] 2026-10-01T01:00:00Z | Method: apple_pay    | Terminal:    1 | Failures:   1 | Share: 100.00% [ALERT > 10%]
+  *** ALERT: Failure share for apple_pay is 100.00% (exceeds 10.0% threshold) ***
+------------------------------------------------------------
+Summary written to lab8\part3\results\exp1_restart.json
+============================================================
+Consumer [c1-phase2] Final Execution Summary:
+  Events Consumed:    636
+  Duplicates Dropped: 7
+  Late Rejected:      404
+  Windows Closed:     42
+  Alerts Fired:       4
+  Dedup Set Size:     208
+============================================================

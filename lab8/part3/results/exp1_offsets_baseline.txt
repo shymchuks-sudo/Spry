@@ -1,0 +1,12 @@
+GROUP                  payments-cg
+COORDINATOR-NODE       0
+COORDINATOR-PARTITION  __consumer_offsets/2
+STATE                  Empty
+BALANCER               
+MEMBERS                0
+TOTAL-LAG              0
+
+TOPIC     PARTITION  CURRENT-OFFSET  LOG-START-OFFSET  LOG-END-OFFSET  LAG   MEMBER-ID  CLIENT-ID  HOST
+payments  0          208             0                 208             0                           
+payments  1          204             0                 204             0                           
+payments  2          224             0                 224             0                           

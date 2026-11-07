@@ -6,7 +6,8 @@
 | `lab8-payments-594559484590` | S3 Bucket | 2026-11-07 11:29:00 | $0.023 / GB-month | Retained | 1.26 GB JSON + 82.5 MB Parquet (~$0.03/mo) |
 | Athena Workgroup / Database | Athena Query Engine | 2026-11-07 11:30:30 | $5.00 / TB scanned | Retained | Total scanned: ~18.5 GB (~$0.09) |
 | `lab8-glue-crawler-role` | IAM Role | 2026-11-07 11:41:00 | Free | Retained | Glue service role |
-| `lab8-payments-crawler` | AWS Glue Crawler | 2026-11-07 11:41:15 | $0.44 / DPU-hour (~$0.015/run) | Deleted after crawl | 1 crawl execution |
+| `lab8-payments-crawler` | AWS Glue Crawler | 2026-11-07 11:41:15 | $0.44 / DPU-hour (~$0.015/run) | 2026-11-07 11:43:59 | 1 crawl execution |
+| Local Redpanda & Console | Docker Containers | 2026-11-07 11:49:15 | Free (Local compute) | Running | 1 broker, 3 partitions, port 8080 |
 
 ## Log of Actions and Findings
 - **2026-11-07 11:24:52 UTC**: Setup checks executed.

@@ -1,0 +1,494 @@
+{
+  "client_id": "worker-1",
+  "group_id": "payments-cg",
+  "topic": "payments",
+  "lateness_sec": 120,
+  "events_consumed": 412,
+  "duplicates_dropped": 5,
+  "late_rejected": 201,
+  "windows_closed": 37,
+  "alerts_fired": 6,
+  "dedup_cache_size": 146,
+  "max_event_time": "2026-10-01T00:59:56Z",
+  "watermark": "2026-10-01T00:57:56Z",
+  "window_records_count": 53,
+  "window_records": [
+    {
+      "window_start": "2026-10-01T00:00:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 3,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:00:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 3,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:01:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 1,
+      "failure_share_pct": 100.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:03:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:04:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 1,
+      "failure_share_pct": 100.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:07:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:07:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:08:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:08:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:10:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:12:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:13:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:13:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:14:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:15:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 4,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:16:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:16:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:18:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 1,
+      "failure_share_pct": 100.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:20:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:21:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:26:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:29:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:30:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:32:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:32:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:32:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:33:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:34:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:35:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:36:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 2,
+      "failures": 1,
+      "failure_share_pct": 50.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:38:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:42:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:44:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:44:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:45:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:45:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 1,
+      "failure_share_pct": 100.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:47:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:47:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:47:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 1,
+      "failure_share_pct": 100.0,
+      "alert": true
+    },
+    {
+      "window_start": "2026-10-01T00:48:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:48:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:50:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:52:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:53:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:53:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:54:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:54:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "qr",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:56:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:56:00Z",
+      "label": "WINDOW CLOSED",
+      "paymentMethod": "google_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:57:00Z",
+      "label": "WINDOW FLUSHED (END OF RUN)",
+      "paymentMethod": "google_pay",
+      "terminal_events": 2,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:58:00Z",
+      "label": "WINDOW FLUSHED (END OF RUN)",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:58:00Z",
+      "label": "WINDOW FLUSHED (END OF RUN)",
+      "paymentMethod": "card",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    },
+    {
+      "window_start": "2026-10-01T00:59:00Z",
+      "label": "WINDOW FLUSHED (END OF RUN)",
+      "paymentMethod": "apple_pay",
+      "terminal_events": 1,
+      "failures": 0,
+      "failure_share_pct": 0.0,
+      "alert": false
+    }
+  ]
+}

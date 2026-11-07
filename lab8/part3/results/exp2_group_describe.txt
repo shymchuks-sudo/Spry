@@ -1,0 +1,7 @@
+GROUP                  payments-cg
+COORDINATOR-NODE       0
+COORDINATOR-PARTITION  __consumer_offsets/2
+STATE                  PreparingRebalance
+BALANCER               
+MEMBERS                2
+TOTAL-LAG              0

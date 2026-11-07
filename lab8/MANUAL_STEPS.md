@@ -30,7 +30,23 @@ In the **Recent queries** tab (bottom panel), you can see all query history alon
 ---
 
 ## 2. Redpanda Console Screenshots (Part 3)
-*(To be completed during Part 3 execution: topic view and consumer group view on http://localhost:8080)*
+
+Open your web browser and navigate to the Redpanda Console at:
+👉 **[http://localhost:8080](http://localhost:8080)**
+
+### Required Screenshots:
+1. **Topic Overview (`payments`)**:
+   - Go to **Topics** in the left sidebar -> Click on **`payments`**.
+   - URL: `http://localhost:8080/topics/payments`
+   - Verify that **3 Partitions** are displayed (Partitions 0, 1, 2).
+   - Click on the **Messages** tab to view sample replayed JSON records with `invoiceId` partition keys.
+   - *Take a screenshot of the topic overview showing the 3 partitions and message count.*
+
+2. **Consumer Group Overview (`payments-cg`)**:
+   - Go to **Consumers** in the left sidebar -> Click on **`payments-cg`**.
+   - URL: `http://localhost:8080/groups/payments-cg`
+   - View the active group members, partition assignments, and committed log offsets / lag (0 lag).
+   - *Take a screenshot showing the consumer group state.*
 
 ---
 
